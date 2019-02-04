@@ -1,0 +1,7 @@
+@mixin secondary-ui() {
+  background-color: rgb(20,75,129);
+  color: #fff;
+  a, a:visited {
+    color: lightgrey;
+  }
+}
