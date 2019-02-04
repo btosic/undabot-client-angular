@@ -43,40 +43,14 @@
     max-width: 200px;
     border-radius: 50%;
   }
-}
-
-/* Contact */
-.contact {
-  .description {
-    text-align: left;
-    max-width: 500px;
-    margin: auto;
-  }
 } 
 
 /* Larger than "phablet" */
 @media (min-width: 550px) {
-  .banner {
-    display: block;
-  }
-  .section {
-    padding: 12rem 0 10rem;
-  }
   .split {
     text-align: left;
     .heading {
       font-size: 2.6rem;
-    }
-  }
-}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-  .section {
-    .description {
-      max-width: 75%;
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 }

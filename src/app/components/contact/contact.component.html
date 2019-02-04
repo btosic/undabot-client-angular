@@ -1,5 +1,40 @@
-<div class="section">
-  <div class="container">
+<div class="banner">
+  <img src="/assets/images/team.jpg">
+</div>
+
+<div class="section contact">
+  <div class="container" *ngIf="!submitted">
     <h3>Contact Us</h3>
+    <div class="description">
+      <p>Whether you need an old-school Core i7 home notebook or a cutting-edge 8086 Giant
+        workstation, we can provide the complete solution for your needs.</p>
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-element">
+          <label for="email">Your email</label>
+          <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="email" name="email" [(ngModel)]="email" #emailRef="ngModel"
+            required email>
+          <span class="error" *ngIf="isErrorVisible(emailRef, 'required', 'email', 400)">E-mail address is required.</span>
+          <span class="error" *ngIf="isErrorVisible(emailRef, 'email', 'email', 422)">Invalid e-mail address.</span>
+        </div>
+        <div class="form-element">
+          <label for="message">Message</label>
+          <textarea class="u-full-width" id="message" name="message" [(ngModel)]="message" #messageRef="ngModel" required minlength="31"></textarea>
+          <span class="error" *ngIf="isErrorVisible(messageRef, 'required', 'message', 400)">Message is required.</span>
+          <span class="error" *ngIf="isErrorVisible(messageRef, 'minlength', 'message', 422)">Message must contain more that 30 characters.</span>
+        </div>
+        <label for="clientValidation">
+          <input type="checkbox" id="clientValidation" name="clientValidation" [(ngModel)]="clientValidation">
+          <span class="label-body">Use client-side validation</span>
+        </label>
+        <button class="button-primary" type="submit" [disabled]="clientValidation && !contactForm.form.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="container" *ngIf="submitted">
+    <h3>Thank You</h3>
+    <div class="description">
+      <p>We received your message and will get back to you as soon as possible.</p>
+      <a class="button button-primary" routerLink="/home">Back to Main Page</a>
+    </div>
   </div>
 </div>

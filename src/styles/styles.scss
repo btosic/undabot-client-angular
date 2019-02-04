@@ -60,3 +60,24 @@ nav {
     width: 100%;
   }
 }
+
+/* Larger than "phablet" */
+@media (min-width: 550px) {
+  .banner {
+    display: block;
+  }
+  .section {
+    padding: 12rem 0 10rem;
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  .section {
+    .description {
+      max-width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

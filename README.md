@@ -10,13 +10,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Task 1 ­- New instance
+## Task 1 - New instance
 
 Since Angular uses Webpack internally no additional configuration was required.
 
 Navigation element and two boilerplate components (Home and Contact) were created for this task. Angular Router was set up to handle the navigation (see app-routing.module.ts).
 
-## Task 2 ­- Home page
+## Task 2 - Home page
 
 Content is assembled based on the TV show I'm currently watching. Text and images are collected from all over the internet or made-up.
 
@@ -31,3 +31,15 @@ Responsive concepts used here are:
 Other concepts could be applied, like smaller images for small screens to reduce network traffic on mobile phones, but this wasn't implemented here.
 
 SCSS files in this task showcase the usage of variables, nesting, mixins and importing partials.
+
+## Task 3 - Contact us page
+
+This task is realized using Angular Forms and two-way model binding. POST request is sent to server running at http://localhost:3000 as configured in environment.ts. Server implementation can be found in `undabot-server-express` repository.
+
+Both client-side and server-side validation is demonstrated in this task. For client-side validation, checkbox above Submit button needs to be checked.
+
+Client-side validation is using Angular Forms template-driven validation. When used, Submit button is disabled until all form fields are in valid state.
+
+If client-side validation is not used (checkbox not checked), validation errors (if any) are displayed based on the server response.
+
+HTML elements representing error messages are shared (reused) for both client-side and server-side validation.
